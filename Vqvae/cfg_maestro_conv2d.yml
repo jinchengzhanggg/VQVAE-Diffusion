@@ -1,0 +1,23 @@
+model_name: exp-20230720
+net_params:
+  inc: 1
+  num_embed: 128
+  embed_dim: 256
+  num_residual: 2
+  beta: 0.25
+  decay: 0.99
+
+batch_size: 32
+epochs: 20000
+
+data_func:
+  func: load_maestro_data
+  params:
+    dir_path: ../datasets/maestro-v3.0.0
+    test_size: 0.3
+    window_size: 1024
+    stride: 768
+
+shape: [1, 88, 1024]
+
+vis_epoch: 1
